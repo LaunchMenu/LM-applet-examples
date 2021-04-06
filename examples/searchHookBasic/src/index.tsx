@@ -3,10 +3,7 @@ import {
     createSettingsFolder,
     createStandardMenuItem,
     declare,
-    Menu,
     Priority,
-    searchAction,
-    UILayer,
 } from "@launchmenu/core";
 import {Field} from "model-react";
 

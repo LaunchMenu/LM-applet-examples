@@ -1,6 +1,6 @@
-# Search hook basic
+# Search nested
 
-Shows off a basic single item search and usage of model-react hooks
+Shows off nested/recursive searches
 
 ## Running
 

@@ -1,6 +1,6 @@
-# Search hook basic
+# Search pattern
 
-Shows off a basic single item search and usage of model-react hooks
+Shows off the results of returning a search pattern
 
 ## Running
 
