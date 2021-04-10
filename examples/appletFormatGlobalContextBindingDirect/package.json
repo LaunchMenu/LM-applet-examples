@@ -1,5 +1,5 @@
 {
-    "name": "example",
+    "name": "applet-format-global-context-binding-direct",
     "private": true,
     "version": "0.0.0",
     "types": "build/index.d.ts",

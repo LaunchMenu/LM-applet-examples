@@ -1,5 +1,5 @@
 {
-    "name": "example",
+    "name": "search-pattern",
     "private": true,
     "version": "0.0.0",
     "types": "build/index.d.ts",
