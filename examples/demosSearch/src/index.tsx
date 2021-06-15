@@ -34,10 +34,13 @@ export default declare({
     info,
     settings,
     search: async (query, hook) => {
-        const rawData = await fetch(`https://rickandmortyapi.com/api/character/?`);
-        const data = (await rawData.json()) as {
-            results: [{name: string; image: string; species: string}];
-        };
+        const rawData = await fetch(
+            `https://rickandmortyapi.com/api/character?name=${query.search}`
+        );
+        const data: {
+            results: {name: string; image: string; species: string}[];
+        } = rawData.ok ? await rawData.json() : {results: []};
+
         const items = data.results.map(({name, image, species}) =>
             resultCache.get(name, image, species)
         );

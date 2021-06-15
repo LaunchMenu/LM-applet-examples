@@ -60,6 +60,7 @@ export default declare({
                 alert(`Pattern was matched, ${event.alt ? "with" : "without"} alt`);
                 return true;
             }
+            console.log(event);
             if (patterns.modifier.get().matchesModifier(event) && event.key.char) {
                 alert(`${event.key.char} was pressed with the modifier`);
                 return true;

@@ -23,23 +23,6 @@ const settings = createSettings({
     settings: () => createSettingsFolder({...info, children: {}}),
 });
 
-const alertAllAction = createContextAction({
-    name: "Alert all",
-    contextItem: {
-        priority: [Priority.MEDIUM, Priority.HIGH],
-    },
-    core: (data: string[]) => {
-        const combined = data.join(", ");
-        return {
-            // Provide the function to perform on execute
-            execute: () => alert(combined),
-            // We might as well return the computed data as a result,
-            // such that this handler has some use as a stand-alone action
-            result: combined,
-        };
-    },
-});
-
 const folder1 = createContextFolderHandler({
     name: "Folder 1",
     priority: [Priority.HIGH, Priority.MEDIUM],
@@ -76,9 +59,9 @@ const actionForFolder2 = createContextAction({
 
 const items = [
     createStandardMenuItem({
-        name: "Hallo!",
-        onExecute: () => alert("Hallo!"),
-        actionBindings: [actionForContextMenu.createBinding("Hallo")],
+        name: "Hello!",
+        onExecute: () => alert("Hello!"),
+        actionBindings: [actionForContextMenu.createBinding("Hello")],
     }),
     createStandardMenuItem({
         name: "How are you?",

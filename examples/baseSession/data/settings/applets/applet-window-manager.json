@@ -2,36 +2,35 @@
     "version": "0.0.0",
     "data": {
         "position": {
-            "x": 11,
-            "y": -914
+            "x": 610,
+            "y": 315
         },
         "size": {
             "width": 700,
             "height": 450
         },
+        "windowShadow": true,
         "visibility": {
             "hideOnBlur": false,
             "showDebugger": "if running dev"
         },
         "controls": {
-            "open": "Control+O",
+            "open": [
+                {
+                    "type": "down",
+                    "pattern": ["ctrl", "o"]
+                }
+            ],
             "exit": [
                 {
                     "type": "down",
-                    "pattern": [
-                        "ctrl",
-                        "q"
-                    ]
+                    "pattern": ["ctrl", "q"]
                 }
             ],
             "exitState": [
                 {
                     "type": "down",
-                    "pattern": [
-                        "ctrl",
-                        "shift",
-                        "q"
-                    ]
+                    "pattern": ["ctrl", "shift", "q"]
                 }
             ],
             "restart": [],

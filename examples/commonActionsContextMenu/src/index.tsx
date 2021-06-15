@@ -49,9 +49,9 @@ const alertAllAction = createAction({
 });
 const items = [
     createStandardMenuItem({
-        name: "Hallo!",
-        onExecute: () => alert("Hallo!"),
-        actionBindings: [alertAllAction.createBinding("Hallo")],
+        name: "Hello!",
+        onExecute: () => alert("Hello!"),
+        actionBindings: [alertAllAction.createBinding("Hello")],
     }),
     createStandardMenuItem({
         name: "How are you?",

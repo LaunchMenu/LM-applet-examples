@@ -24,7 +24,7 @@ const settings = createSettings({
     settings: () => createSettingsFolder({...info, children: {}}),
 });
 
-const baseItem = [
+const baseItems = [
     createStandardMenuItem({
         name: "Hello world",
         onExecute: () => alert("Hello"),
@@ -35,7 +35,7 @@ const baseItem = [
     }),
 ];
 
-const item = baseItem.map(item =>
+const items = baseItems.map(item =>
     menuItemIdentityAction.copyItem(item, [
         scrollableContentHandler.createBinding(<Box>My cool content</Box>),
     ])
@@ -46,12 +46,12 @@ export default declare({
     settings,
     async search(query, hook) {
         return {
-            children: searchAction.get(item),
+            children: searchAction.get(items),
         };
     },
     open({context, onClose}) {
         context.open(
-            new UILayer(() => ({menu: new Menu(context, item), onClose}), {
+            new UILayer(() => ({menu: new Menu(context, items), onClose}), {
                 path: "Example",
             })
         );

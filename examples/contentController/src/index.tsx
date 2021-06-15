@@ -137,7 +137,7 @@ export function createSectionedContentKeyHandler(
     });
     const standardContentHandler = createStandardContentKeyHandler(
         content,
-        context
+        context,
         config
     );
 
@@ -233,7 +233,7 @@ export default declare({
     open({context, onClose}) {
         context.open(
             new UILayer(
-                context => {
+                (context, close) => {
                     const content = new SectionedContent(
                         (
                             <div>
@@ -247,7 +247,8 @@ export default declare({
                     );
                     const contentHandler = createSectionedContentKeyHandler(
                         content,
-                        context
+                        context,
+                        {onExit: close}
                     );
                     const contentView = <SectionedContentView content={content} />;
 

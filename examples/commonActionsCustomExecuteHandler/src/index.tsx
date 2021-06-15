@@ -40,8 +40,8 @@ const alertAllHandler = createAction({
 });
 const items = [
     createStandardMenuItem({
-        name: "Hallo!",
-        actionBindings: [alertAllHandler.createBinding("Hallo")],
+        name: "Hello!",
+        actionBindings: [alertAllHandler.createBinding("Hello")],
     }),
     createStandardMenuItem({
         name: "How are you?",

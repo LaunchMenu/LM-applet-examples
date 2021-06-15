@@ -14,24 +14,22 @@
             "showDebugger": "if running dev"
         },
         "controls": {
-            "open": "Control+O",
+            "open": [
+                {
+                    "type": "down",
+                    "pattern": ["ctrl", "o"]
+                }
+            ],
             "exit": [
                 {
                     "type": "down",
-                    "pattern": [
-                        "ctrl",
-                        "q"
-                    ]
+                    "pattern": ["ctrl", "q"]
                 }
             ],
             "exitState": [
                 {
                     "type": "down",
-                    "pattern": [
-                        "ctrl",
-                        "shift",
-                        "q"
-                    ]
+                    "pattern": ["ctrl", "shift", "q"]
                 }
             ],
             "restart": [],

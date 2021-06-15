@@ -28,8 +28,8 @@ const items = [
         actionBindings: [
             keyHandlerAction.createBinding({
                 onKey: event => {
-                    if (event.key.char && !event.shift) {
-                        console.log(event.key.char);
+                    if (event.key.char && event.type == "up" && !event.shift) {
+                        alert(event.key.char);
                         return true;
                     }
                     return false;
