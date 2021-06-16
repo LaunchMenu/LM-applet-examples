@@ -4,8 +4,7 @@ import {
     createStandardTextFieldKeyHandler,
     declare,
     IKeyEventListener,
-    insertText,
-    Menu,
+    InsertTextCommand,
     TextField,
     UILayer,
 } from "@launchmenu/core";
@@ -44,7 +43,7 @@ export default declare({
                             ? "abcdefghijklmnopqrstuvwxyz".indexOf(event.key.char)
                             : -1;
                         if (index != -1 && ["down", "repeat"].includes(event.type)) {
-                            insertText(field, index + "");
+                            new InsertTextCommand(field, index + "").execute();
                             return true;
                         }
 

@@ -18,7 +18,7 @@ const info = {
     icon: "applets" as const,
 };
 
-const settings = createSettings({
+export const settings = createSettings({
     version: "0.0.0",
     settings: () =>
         createSettingsFolder({

@@ -50,9 +50,6 @@ export default declare({
         context.open(
             new UILayer(
                 () => ({
-                    menu: new Menu(context, []),
-                    searchable: false,
-
                     field,
                     highlighter: new HighlightLexer(tokenList),
                     handleClose: true,

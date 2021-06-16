@@ -3,11 +3,8 @@ import {
     baseSettings,
     createSettings,
     createSettingsFolder,
-    createStandardMenuItem,
     declare,
     KeyEvent,
-    Menu,
-    searchAction,
     UILayer,
 } from "@launchmenu/core";
 

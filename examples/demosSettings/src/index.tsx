@@ -54,7 +54,7 @@ const items = [
 export default declare({
     info,
     settings,
-    search: async (query, hook) => ({children: searchAction.get(items)}),
+    search: async (query, hook) => ({children: searchAction.get(items, hook)}),
     open({context, onClose}) {
         context.open(
             new UILayer(() => ({menu: new Menu(context, items), onClose}), {

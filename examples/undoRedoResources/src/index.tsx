@@ -99,12 +99,12 @@ class DelayedRandomIncrementCommand extends Command {
     /** @override */
     protected async onExecute() {
         await new Promise(res => setTimeout(res, 1000));
+        this.oldVal = this.field.get();
         if (!this.newVal)
             this.newVal =
                 this.field.get() +
                 (this.max > 0 ? 1 : -1) *
                     Math.floor(Math.random() * Math.abs(this.max) + 1);
-        this.oldVal = this.field.get();
         this.field.set(this.newVal);
     }
 

@@ -36,9 +36,10 @@ const Content: FC<{text: string}> = ({text}) => {
 
     // Retrieve the style that can be used for highlighting
     const theme = useTheme();
-    const syntaxStyling = useMemo(() => getHighlightThemeStyle(theme.highlighting), [
-        theme,
-    ]);
+    const syntaxStyling = useMemo(
+        () => getHighlightThemeStyle(theme.highlighting),
+        [theme]
+    );
 
     // Use the fuzzy rater to retrieve a score and highlighter for this text
     const data = useMemo(() => {
@@ -66,10 +67,10 @@ const Content: FC<{text: string}> = ({text}) => {
         <Box css={syntaxStyling}>
             <SearchHighlighter
                 searchHighlighter={data.highlighter}
+                text={text}
                 // We're not actually using the dat below, since the search data is hardcoded in the highlighter
                 searchText={query.search}
                 query={query}
-                text={text}
             />
             : {data.score.join(",")}
         </Box>

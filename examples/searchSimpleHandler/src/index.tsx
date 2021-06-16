@@ -37,7 +37,7 @@ const items = [
 ];
 
 // Create a custom search method, in this case testing for reverse sub-matches
-const reverseSearchMethod: ISimpleSearchMethod = {
+export const reverseSearchMethod: ISimpleSearchMethod = {
     name: "Reverse",
     ID: "ReverseSearchMethod",
     view: createStandardMenuItem({name: "Reverse search"}),
@@ -89,7 +89,7 @@ export default declare({
         simpleSearchHandler.addSearchMethod(reverseSearchMethod);
 
         return {
-            search: async () => ({children: searchAction.get(items)}),
+            search: async query => ({children: searchAction.get(items)}),
 
             // Remove the handler when the applet is unloaded
             onDispose: () => simpleSearchHandler.removeSearchMethod(reverseSearchMethod),
